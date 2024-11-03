@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthorSearchComponent } from "./author-search/author-search.component";
 import {HomeComponent} from "./home/home.component";
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
@@ -25,6 +26,7 @@ export const routes: Routes = [
   {path: 'books', component: BooksComponent,
     children: booksRoutes
   },
+  {path: "authors", component: AuthorSearchComponent },
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component: HomeComponent}
 ];
