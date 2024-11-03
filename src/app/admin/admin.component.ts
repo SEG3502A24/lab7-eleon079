@@ -84,7 +84,7 @@ export class AdminComponent implements OnInit {
             this.booksService.getAuthorsNamed(author.firstName, author.lastName).subscribe({
                 next: (authorList: Author[]) => {
                   if (authorList === undefined || authorList.length === 0) {
-                    this.booksService.addBookAuthor(response.id, author).subscribe();
+                    this.booksService.addBookAuthor(String(response.id), author).subscribe();
                   } else {
                     // *** Assumes unique firstName/LastName for Authors
                     this.booksService.updateBookAuthors(response.id, authorList[0].id).subscribe();

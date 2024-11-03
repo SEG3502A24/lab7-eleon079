@@ -32,8 +32,16 @@ export class BooksService {
   }
 
   public getAuthorById(id: string): Observable<Author> {
-    return this.http.get<Author>(Url + 'authors/' + id);
+    return this.http.get<Author>(`${Url}authors/${id}`).pipe(
+      map(response => ({
+        id: response.id,
+        firstName: response.firstName,
+        lastName: response.lastName,
+        books: response.books?.map((book: any) => ({ title: book.title }))
+      }))
+    );
   }
+  
   
   
   

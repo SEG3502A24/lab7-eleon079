@@ -1,7 +1,7 @@
 <div>
     <h2>Search Author by ID</h2>
     <input type="text" #authorIdInput placeholder="Enter Author ID">
-    <button (click)="searchAuthorById(authorIdInput.value)">Search</button>
+    <button (click)="searchAuthor(authorIdInput.value)">Search</button>
   </div>
   
   <div *ngIf="author">
@@ -9,10 +9,16 @@
     <p><strong>ID:</strong> {{ author.id }}</p>
     <p><strong>First Name:</strong> {{ author.firstName }}</p>
     <p><strong>Last Name:</strong> {{ author.lastName }}</p>
+    <div *ngIf="author.books?.length">
+      <h4>Books:</h4>
+      <ul>
+        <li *ngFor="let book of author.books">{{ book.title }}</li>
+      </ul>
+    </div>
   </div>
-  
-  <div *ngIf="message" class="alert alert-warning">
+  <div *ngIf="!author && message">
     <p>{{ message }}</p>
   </div>
+  
   
   
