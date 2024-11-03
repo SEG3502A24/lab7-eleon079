@@ -1,15 +1,18 @@
 <div>
     <h2>Search Author by ID</h2>
-    <input type="text" #authorId placeholder="Enter Author ID">
-    <button (click)="searchAuthor(authorId.value)">Search</button>
-</div>
-<div *ngIf="author">
+    <input type="text" #authorIdInput placeholder="Enter Author ID">
+    <button (click)="searchAuthorById(authorIdInput.value)">Search</button>
+  </div>
+  
+  <div *ngIf="author">
     <h3>Author Details</h3>
-    <p>ID: {{ author?.id }}</p>
-    <p>First Name: {{ author?.firstName }}</p>
-    <p>Last Name: {{ author?.lastName }}</p>
-</div>
-<div *ngIf="message">
+    <p><strong>ID:</strong> {{ author.id }}</p>
+    <p><strong>First Name:</strong> {{ author.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ author.lastName }}</p>
+  </div>
+  
+  <div *ngIf="message" class="alert alert-warning">
     <p>{{ message }}</p>
-</div>
+  </div>
+  
   

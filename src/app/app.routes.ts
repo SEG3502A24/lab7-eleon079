@@ -26,7 +26,8 @@ export const routes: Routes = [
   {path: 'books', component: BooksComponent,
     children: booksRoutes
   },
-  {path: 'authors', component: AuthorsComponent },
+  {path: 'authors', component: AuthorsComponent
+  },
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component: HomeComponent}
 ];

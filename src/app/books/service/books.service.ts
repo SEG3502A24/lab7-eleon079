@@ -20,7 +20,7 @@ export class BooksService {
     return this.http.post<Book>(Url + 'books', book);
   }
 
-  public addBookAuthor(id: number, author: Author): Observable<Author> {
+  public addBookAuthor(id: string, author: Author): Observable<Author> {
     return this.http.post<Author>(Url + 'books/' + id + '/authors', author);
   }
 
@@ -34,6 +34,9 @@ export class BooksService {
   public getAuthorById(id: string): Observable<Author> {
     return this.http.get<Author>(Url + 'authors/' + id);
   }
+  
+  
+  
 
   public updateBookAuthors(bookId: number, authorId: number): Observable<any> {
     return this.http.patch(Url + 'books/' + bookId + '/authors/' + authorId, {});
