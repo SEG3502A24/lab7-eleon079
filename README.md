@@ -3,9 +3,22 @@ Number: 300193674
 
 
 Visuel du program en marche:
-  ![alt text](image.png)
+  ![image](https://github.com/user-attachments/assets/5dd6d1e0-1617-49aa-b2d8-bd78f0743f76)
+  ![image](https://github.com/user-attachments/assets/8781caef-008b-486e-90fc-966b2610c3cb)
 
-Pour faire rouler, 
+
+
+Pour faire rouler,  
+dans command prompt (en utilisant docker):
+docker run -d -p 6033:3306 --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=root" --env="MYSQL_PASSWORD=root" --env="MYSQL_DATABASE=booksDb" mysql
+
+sur la branche serveur: 
+command prompt:
+gradlew bootRun
+
+sur la branche client
+Windows Powershell :
+ng serve
 
 
 
